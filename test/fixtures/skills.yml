@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sname: MyString
+  description: MyString
+  actpass: false
+  ultimate: false
+  skillnum: 1
+  hero_id: 1
+
+two:
+  sname: MyString
+  description: MyString
+  actpass: false
+  ultimate: false
+  skillnum: 1
+  hero_id: 1

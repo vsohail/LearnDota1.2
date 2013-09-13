@@ -1,0 +1,5 @@
+$('.edit_guide').bind('ajax:success', function () {
+    $("#vote_status").html('<h1 style="text-align: center"><%= @guide.numof_votes unless @guide.nil? %></h1>');
+    $("#vote_numof_votes_inc").val(<%= @guide.numof_votes + 1 %>);
+    $("#vote_numof_votes_dec").val(<%= @guide.numof_votes - 1 %>);
+});

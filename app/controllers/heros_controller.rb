@@ -1,4 +1,5 @@
 class HerosController < ApplicationController
+  wrap_parameters format: [:json, :xml]
   skip_before_filter :verify_authenticity_token
   before_action :set_hero, only: [:show, :edit, :update, :destroy]
 
@@ -6,11 +7,20 @@ class HerosController < ApplicationController
   # GET /heros.json
   def index
     @heros = Hero.all
-  end
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @heros.to_xml }
+    end
+    end
 
   # GET /heros/1
   # GET /heros/1.json
   def show
+    @hero = Hero.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @hero.to_xml }
+      end
   end
 
   # GET /heros/new
@@ -58,7 +68,7 @@ class HerosController < ApplicationController
     @hero.destroy
     respond_to do |format|
       format.html { redirect_to heros_url }
-      format.json { head :no_content }
+      format.xml { head :no_content }
     end
   end
 
@@ -72,4 +82,4 @@ class HerosController < ApplicationController
     def hero_params
       params.require(:hero).permit(:name, :oftype, :faction, :melrange, :hasguide)
     end
-end
+  end

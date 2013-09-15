@@ -24,11 +24,6 @@ class GuidesControllerTest < ActionController::TestCase
     assert_redirected_to guide_path(assigns(:guide))
   end
 
-  test "should show guide" do
-    get :show, id: @guide
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @guide
     assert_response :success

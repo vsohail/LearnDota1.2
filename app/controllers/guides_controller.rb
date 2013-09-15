@@ -1,4 +1,5 @@
 class GuidesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_action :set_guide, only: [:show, :edit, :update, :destroy]
 
   # GET /guides
@@ -28,7 +29,7 @@ class GuidesController < ApplicationController
 
     respond_to do |format|
       if @guide.save
-        format.html { redirect_to @guide, notice: 'Guide was successfully created.' }
+        format.html { redirect_to @guide, notice: '' }
         format.json { render action: 'show', status: :created, location: @guide }
       else
         format.html { render action: 'new' }
@@ -42,7 +43,7 @@ class GuidesController < ApplicationController
   def update
     respond_to do |format|
       if @guide.update(guide_params)
-        format.html { redirect_to @guide, notice: 'Guide was successfully updated.' }
+        format.html { redirect_to @guide, notice: '' }
         format.js
       else
         format.html { render action: 'edit' }

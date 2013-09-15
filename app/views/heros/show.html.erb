@@ -44,7 +44,7 @@
           <% @hero.skills.each do |skill| %>
               <p>
               <li>Skill <%== skill.skillnum %>: <%= skill.sname %>
-                <% if skill.ultimate == 1 %>
+                <% if skill.ultimate == true %>
                     <em>(Ultimate)</em>
                 <% end %>
                 <ul>

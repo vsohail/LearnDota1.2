@@ -1,0 +1,24 @@
+LearnDota
+ruby 2.0.0
+rails 4.0.0
+
+Models/Controllers
+->Heros-REST Api XML
+->Skills-REST Api JSON
+->Guides-REST Api JSON
+Views
+/heros
+/heros/1
+/guides
+/guides/1
+/guides/new
+
+
+Views enhanced with Bootstrap :)
+routes.rb starts at /heroes
+CRUD exists for Guides in views
+It exists for Heros,Skills too but disabled for users.
+Test cases written for validations in models and for controller CRUD activity
+AJAX is on /guides/1 /guides/2 etc[To reach a particular guide click on hero and then under guides click on 'guide by' or add a new guide]
+It is an upvote/downvote button
+Database only updated for approx.  9 heroes, 4 skills and 2 guides 
